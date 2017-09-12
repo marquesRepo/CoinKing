@@ -1,0 +1,83 @@
+
+.parentHeading{
+	height: 500px;
+	width: 100%;
+	left: 0px;
+	border-style: solid;
+	background-image: url("http://www.startupshk.com/wp-content/uploads/2015/06/bitcoin-gold.jpg");
+	opacity: 4px;
+}
+.childOneHeading{
+	height: 75px;
+	width: 100px;
+	top: 400px;
+	margin-left: 40%;
+	margin-right: 50%;
+	position: relative;
+	display: inline;
+}
+.tickerSymbolInput{
+	border:none;
+	background-color: gray;
+	border-bottom: solid gold;
+}
+.childTwoHeading{
+	height:200px;
+	width: 200px;
+	top: 60px;
+	left: 10px;
+	position: relative;
+	border-style: solid;
+	display: none;
+}
+.childThreeHeading{
+	height:200px;
+	width: 200px;
+	bottom: 60px;
+	left: 1200px;
+	position: relative;
+	border-style: solid;
+	display: none;
+}
+.childFourHeading{
+	height:150px;
+	width: 1150px;
+	bottom: 0px;
+	left: 175px;
+	position: relative;	
+}
+.headingOne{
+	font-family: 'Permanent Marker', cursive;
+	font-size: 300%; 
+	color: black;
+	text-align: center;
+	font-weight: bold; 
+	letter-spacing: 30px;
+}
+.childFiveHeading{
+	height:100px;
+	width: 100%;
+	top:0px;
+	left: 0px;
+	position: relative;	
+}
+.headingTwo{
+	font-family: 'Permanent Marker', cursive;
+	font-size: 250%; 
+	color: black;
+	text-align: center;
+	font-weight: bold; 
+}
+.tickerSymbolInput{
+
+}
+.parentBody{
+	height: 700px;
+	width: 100%;
+	border-style: solid;
+	display: none; 
+}
+.childBodyOne{
+	height: 700px;
+	width: 50%;
+} 
