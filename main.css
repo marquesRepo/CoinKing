@@ -1,6 +1,6 @@
 
 .parentHeading{
-	height: 500px;
+	height: 700px;
 	width: 100%;
 	left: 0px;
 	border-style: solid;
@@ -10,16 +10,40 @@
 .childOneHeading{
 	height: 75px;
 	width: 100px;
-	top: 400px;
-	margin-left: 40%;
+	top: 450px;
+	font-size: 0px;
+	margin-left: 10%;
 	margin-right: 50%;
 	position: relative;
 	display: inline;
 }
 .tickerSymbolInput{
 	border:none;
-	background-color: gray;
-	border-bottom: solid gold;
+	position: relative;
+	top:6px;
+	background-color: transparent;
+	border-bottom: solid green;
+	width: 400px;
+	height: 43px;
+	overflow: hidden;
+	border-bottom-width: 5px;
+	font-size: 40px;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.searchSymbol{
+	box-sizing: border-box;
+	position: relative;
+	top: 17px;
+	text-align: center;
+	display: inline-block;
+	background-color: transparent;
+	border-color: green; 
+	border-width: 5px;
+	height: 50px;
+	font-size: 50px;
+	width: 120px;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	overflow: hidden;
 }
 .childTwoHeading{
 	height:200px;
@@ -67,9 +91,6 @@
 	color: black;
 	text-align: center;
 	font-weight: bold; 
-}
-.tickerSymbolInput{
-
 }
 .parentBody{
 	height: 700px;
