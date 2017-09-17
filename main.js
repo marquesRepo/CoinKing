@@ -1,19 +1,21 @@
-/* https://bittrex.com/api/v1.1/public/getmarkets    
-https://bittrex.com/api/v1.1/public/getcurrencies    
-https://bittrex.com/api/v1.1/public/getticker  
-https://bittrex.com/api/v1.1/public/getmarketsummaries   
-https://bittrex.com/api/v1.1/public/getmarketsummary?market=btc-ltc  
-*/
-const BITTREX_SEARCH_URL= 'https://api.cryptonator.com/api/full/btc-usd'
+const CRYPTONATOR_SEARCH_URL= 'https://api.cryptonator.com/api/full/btc-usd'
 
 function getDataFromApi(searchTerm, callback) {
-  const overview = {
-    url:BITTREX_SEARCH_URL,
+  const query = {
+    q: `${searchTerm} in:base`
+  }
+  $.getJSON(CRYPTONATOR_SEARCH_URL, query, callback);
 }
 function renderResult(result) {
   return `
     <div>
-      
+    	<ul>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    	</ul>  
     </div>
   `;
 }
@@ -28,6 +30,7 @@ function watchSubmit() {
     const query = queryTarget.val();
     
     queryTarget.val("");
-    getDataFromApi(query, displayGitHubSearchData);
+    getDataFromApi(query, displaySearchData);
   });
 }
+$(watchSubmit);
