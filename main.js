@@ -1,20 +1,26 @@
-const CRYPTONATOR_SEARCH_URL= 'https://api.cryptonator.com/api/full/btc-usd'
-
+const CRYPTONATOR_SEARCH_URL= 'https://api.cryptonator.com/api/full/'
+console.log("whatever")
 function getDataFromApi(searchTerm, callback) {
   const query = {
-    q: `${searchTerm} in:base`
-  }
-  $.getJSON(CRYPTONATOR_SEARCH_URL, query, callback);
+  	url: CRYPTONATOR_SEARCH_URL,
+  	data: {
+      q: `${searchTerm} in:base`
+    },
+    dataType: 'json',
+    type: 'GET',
+    success: callback
+  };
+  $.ajax(query);
 }
 function renderResult(result) {
   return `
     <div>
     	<ul>
-    		<li></li>
-    		<li></li>
-    		<li></li>
-    		<li></li>
-    		<li></li>
+    		<li>${result}</li>
+    		<li>${result}</li>
+    		<li>${result}</li>
+    		<li>${result}</li>
+    		<li>${result}</li>
     	</ul>  
     </div>
   `;
@@ -24,13 +30,20 @@ function displaySearchData(data) {
   $('.js-search-results').html(results);
 }
 function watchSubmit() {
+  console.log("function start");
   $('.js-search-form').submit(event => {
     event.preventDefault();
     const queryTarget = $(event.currentTarget).find('.tickerSymbolInput');
-    const query = queryTarget.val();
-    
+    const query = queryTarget.val();    
     queryTarget.val("");
     getDataFromApi(query, displaySearchData);
   });
 }
-$(watchSubmit);
+
+function resultsBox(){
+	$(searchSymbol).on('click', event =>{
+		$(js-search-results).show();
+	});
+}
+watchSubmit();
+//resultsBox();
