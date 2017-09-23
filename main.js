@@ -1,49 +1,53 @@
-const CRYPTONATOR_SEARCH_URL= 'https://api.cryptonator.com/api/full/'
-console.log("whatever")
-function getDataFromApi(searchTerm, callback) {
-  const query = {
+const CRYPTONATOR_SEARCH_URL= 'https://api.coinmarketcap.com/v1/ticker/'
+function getDataFromApi(callback) {
+  const settings = {
   	url: CRYPTONATOR_SEARCH_URL,
-  	data: {
-      q: `${searchTerm} in:base`
-    },
     dataType: 'json',
     type: 'GET',
     success: callback
   };
-  $.ajax(query);
+  $.ajax(settings);
 }
 function renderResult(result) {
   return `
     <div>
     	<ul>
-    		<li>${result}</li>
-    		<li>${result}</li>
-    		<li>${result}</li>
-    		<li>${result}</li>
-    		<li>${result}</li>
+    		<p>${result.name}</p>
+    		<p>${result.symbol}</p>
+    		<p>$${result.price_usd}</p>
     	</ul>  
     </div>
   `;
 }
 function displaySearchData(data) {
-  const results = data.items.map((item, index) => renderResult(item));
+  let query = $(".tickerSymbolInput").val();
+  let currency = filterCurrenciesBySymbol(query, data);
+  const results = renderResult(currency);
   $('.js-search-results').html(results);
 }
+function filterCurrenciesBySymbol(symbol, data){
+      let filterArray = data.filter(function(item){
+      return item.name==symbol;
+});
+    if(filterArray.length==0){
+      return {
+        name: "There is no cryptocurrency by that name.",
+        price_usd: 0.00,
+        symbol: ""
+      }
+    }
+    return filterArray[0];
+}
 function watchSubmit() {
-  console.log("function start");
   $('.js-search-form').submit(event => {
     event.preventDefault();
-    const queryTarget = $(event.currentTarget).find('.tickerSymbolInput');
-    const query = queryTarget.val();    
-    queryTarget.val("");
-    getDataFromApi(query, displaySearchData);
+    getDataFromApi(displaySearchData);
   });
 }
-
 function resultsBox(){
-	$(searchSymbol).on('click', event =>{
-		$(js-search-results).show();
+	$(".searchSymbol").on('click', event =>{
+		$(".js-search-results").show();
 	});
 }
 watchSubmit();
-//resultsBox();
+resultsBox();
