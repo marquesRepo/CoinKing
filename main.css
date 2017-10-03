@@ -144,11 +144,28 @@ footer{
 	list-style: none;
 }
 @media screen and (max-width: 1000px){
+	.applicationTitle{
+		font-size: 16px;
+	}
 	.js-search-form, .js-search-results{
 		float: none;
 		width: 100%;
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+	.js-container{
+		margin-top: 0px; 
+	}
+	.messageContainer{
+		height: 110px;
 	}
 	.messageOne, .messageTwo{
-		font-size: 20px;
+		font-size: 12px;
+	}
+	.searchSymbol{
+		font-size: 25px;
+		height:35px;
+		display:block;
+		margin: auto;
 	}
 }
