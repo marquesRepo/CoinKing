@@ -11,10 +11,10 @@ function getDataFromApi(callback) {
 function renderResult(result) {
   return `
     <div>
-    	<ul>
-    		<p>${result.name}</p>
-    		<p>${result.symbol}</p>
-    		<p>$${result.price_usd}</p>
+    	<ul style= "list-style: none;">
+    		<li>${result.name}</li>
+    		<li>${result.symbol}</li>
+    		<li>$${result.price_usd}</li>
     	</ul>  
     </div>
   `;
@@ -31,7 +31,7 @@ function filterCurrenciesBySymbol(symbol, data){
 });
     if(filterArray.length==0){
       return {
-        name: "There is no cryptocurrency by that name.",
+        name: "There is no cryptocurrency by that name. Check spelling and CAPS lock.",
         price_usd: 0.00,
         symbol: ""
       }
@@ -49,5 +49,12 @@ function resultsBox(){
 		$(".js-search-results").show();
 	});
 }
+function animateMessages(){
+  setInterval(function(){
+    $(".messageContainer").toggleClass("modifier");
+  },5000);
+  
+}
+animateMessages();
 watchSubmit();
 resultsBox();

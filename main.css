@@ -1,21 +1,28 @@
+html{
+	height: 100%;
+}
+body *{
+	box-sizing: border-box;
+}
 .coinKing{
-	height: 720px;
+	height: 100%;
 	width: 100%;
-	left: 0px;
+	margin: 0px;
 	background-image: url("https://media.coindesk.com/uploads/2017/07/Screen-Shot-2017-07-06-at-4.49.31-PM.png");
 	background-size: cover;
-	box-sizing: border-box;
+	background-position: center center;
 	background-repeat: no-repeat;
 }
 .title{
 	height:150px;
-	width: 50%;
-	position: absolute;	
-	left:380px;
+	width: 90%;
+	margin: auto;
+	padding-top: 30px;
 }
 .applicationTitle{
 	font-family: 'Poppins', sans-serif;
-	font-size: 300%; 
+	font-size: 50px; 
+	margin: 0px;
 	color: white;
 	text-align: center;
 	font-weight: bold; 
@@ -23,10 +30,11 @@
 }
 .messageContainer{
 	height: 220px;
+	width: 70%;
+	margin: auto;
 	overflow: hidden;
 	position: relative;
-	left: 110px;
-	top: 150px;
+
 }
 .messageContainer.modifier .messageOne{
 	top: -100%;
@@ -35,7 +43,6 @@
 	top: 0;
 }
 .messageOne{
-	height:90px;
 	width: 100%;
 	top: 0;
 	transition: top 1s;
@@ -49,7 +56,6 @@
 	left: 0px;	
 }
 .messageTwo{
-	height:90px;
 	width: 100%;
 	font-size: 30px;
 	top: 100%; 
@@ -62,13 +68,16 @@
 	background-color: #333333;
 	left: 0px;
 }
+.js-container{
+	width: 90%;
+	margin: auto;
+	overflow: hidden;
+	padding: 20px;
+}
 .js-search-form{
-	left: 25px;
-	font-size: 0px;
-	left:370px;
-	top:150px;
+	width: 60%;
 	position: relative;
-	display: inline;
+	float: left;
 }
 .tickerSymbolInput{
 	border:none;
@@ -76,7 +85,7 @@
 	top:6px;
 	background-color: transparent;
 	border-bottom: solid #03D303;
-	width: 400px;
+	width: 250px;
 	color: #03D303;
 	height: 43px;
 	overflow: hidden;
@@ -102,11 +111,8 @@
 }
 .js-search-results{
 	height:180px;
-	width: 380px;
+	width: 40%;
 	padding-right: 40px;
-	position: absolute;
-	left: 400px;
-	top:500px;
 	background-color: #333333;
 	color: #03D303;
 	font-family: 'Poppins', sans-serif;
@@ -117,356 +123,32 @@
 	text-align: center;
 	justify-content:center;
 	align-items:center;
-	border-radius: 25px
+	border-radius: 25px;
+	float: left;
+}
+footer{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
 }
 .currencyList{
 	height:120px;
+	padding: 20px;
 	width: 100%;
-	top:420px;
-	right:20px;
+	margin: 0px;
 	background-color: #333333;
 	color: white;
 	font-family: 'Poppins', sans-serif;
 	font-weight: bold; 
-	columns: 2;
+	columns: 4;
 	list-style: none;
-	position: relative;
 }
-@media screen and (max-width: 2560px){
-	.coinKing{
-		height: 720px;
+@media screen and (max-width: 1000px){
+	.js-search-form, .js-search-results{
+		float: none;
 		width: 100%;
-		left: 0px;
-		background-image: url("https://media.coindesk.com/uploads/2017/07/Screen-Shot-2017-07-06-at-4.49.31-PM.png");
-		background-size: cover;
-		background-repeat: no-repeat;
 	}
-	.title{
-		height:150px;
-		width: 400px;;
-		position: absolute;	
-		left: 50%;
-		right: 50%;
-	}
-	.messageContainer{
-		height: 320px;
-		overflow: hidden;
-		position: relative;
-		left: 180px;
-		top: 150px;
-	}
-	.messageOne{
-		height:180px;
-		width: 100%;
-		top: 0;
-		transition: top 1s;
-		font-size: 60px; 
-		color:white;
-		text-align: center;
-		font-weight: bold; 
-		font-family: 'Poppins', sans-serif;
-		background-color: #333333;
-		position: absolute;	
-		left: 0px;	
-	}
-	.messageTwo{
-		height:180px;
-		width: 100%;
-		font-size: 60px;
-		top: 100%; 
-		transition: top 1s;
-		color:white;
-		text-align: center;
-		font-weight: bold; 
-		font-family: 'Poppins', sans-serif;
-		position: absolute;	
-		background-color: #333333;
-		left: 0px;
-	}
-	.js-search-form{
-		left: 25px;
-		font-size: 0px;
-		left:370px;
-		top:650px;
-		position: relative;
-		display: inline;
-	}
-	.tickerSymbolInput{
-		border:none;
-		position: relative;
-		top:6px;
-		background-color: transparent;
-		border-bottom: solid #03D303;
-		width: 300px;
-		color: #03D303;
-		height: 43px;
-		overflow: hidden;
-		border-bottom-width: 5px;
-		font-size: 40px;
-		font-family: 'Yanone Kaffeesatz', sans-serif;
-	}
-	.searchSymbol{
-		box-sizing: border-box;
-		position: relative;
-		top: 17px;
-		text-align: center;
-		display: inline-block;
-		background-color: transparent;
-		border-color: #03D303;
-		color: #03D303;
-		border-width: 5px;
-		height: 50px;
-		font-size: 50px;
-		width: 120px;
-		font-family: 'Yanone Kaffeesatz', sans-serif;
-		overflow: hidden;
-	}
-	.js-search-results{
-		height:480px;
-		width: 1080px;
-		padding-right: 40px;
-		position: absolute;
-		left: 1000px;
-		top:600px;
-		background-color: #333333;
-		color: #03D303;
-		font-family: 'Poppins', sans-serif;
-		font-size: 70px;
-		list-style-type: none;
-		list-style: none;
-		display: none;
-		text-align: center;
-		justify-content:center;
-		align-items:center;
-		border-radius: 25px
-	}
-	.currencyList{
-		height:320px;
-		width: 100%;
-		top:840px;
-		right:20px;
-		background-color: #333333;
-		color: white;
-		font-family: 'Poppins', sans-serif;
-		font-weight: bold; 
-		columns: 2;
-		font-size: 40px;
-		list-style: none;
-		position: relative;
-	}
-
-}
-@media screen and (max-width: 768px) {
-	.coinKing{
-		height: 600px;
-		width: 100%;
-		left: 0px;
-		background-image: url("https://media.coindesk.com/uploads/2017/07/Screen-Shot-2017-07-06-at-4.49.31-PM.png");
-		background-size: cover;
-		box-sizing: border-box;
-		background-repeat: no-repeat;
-	}
-	.title{
-		height:150px;
-		width: 50%;
-		position: absolute;	
-		left:340px;
-	}
-	.applicationTitle{
-		font-family: 'Poppins', sans-serif;
-		font-size: 300%; 
-		color: white;
-		text-align: center;
-		font-weight: bold; 
-		letter-spacing: 30px;
-	}
-	.messageContainer{
-		height: 220px;
-		overflow: hidden;
-		position: relative;
-		left: 130px;
-		top: 150px;
-	}
-	.messageOne{
-		height:110px;
-		width: 100%;
-		top: 0;
-		transition: top 1s;
-		font-size: 25px; 
-		color:white;
-		text-align: center;
-		font-weight: bold; 
-		font-family: 'Poppins', sans-serif;
-		background-color: #333333;
-		position: absolute;	
-		left: 0px;	
-	}
-	.messageTwo{
-		height:90px;
-		width: 100%;
-		font-size: 25px;
-		top: 100%; 
-		transition: top 1s;
-		color:white;
-		text-align: center;
-		font-weight: bold; 
-		font-family: 'Poppins', sans-serif;
-		position: absolute;	
-		background-color: #333333;
-		left: 0px;
-	}
-	.js-search-form{
-		font-size: 0px;
-		left:70px;
-		top:225px;
-		position: relative;
-		display: inline;
-	}
-	.tickerSymbolInput{
-		border:none;
-		position: relative;
-		top:6px;
-		background-color: transparent;
-		border-bottom: solid #03D303;
-		width: 250px;
-		color: #03D303;
-		height: 43px;
-		overflow: hidden;
-		border-bottom-width: 5px;
-		font-size: 40px;
-		font-family: 'Yanone Kaffeesatz', sans-serif;
-	}
-	.js-search-results{
-		height:180px;
-		width: 380px;
-		padding-right: 40px;
-		position: absolute;
-		left: 500px;
-		top:400px;
-		background-color: #333333;
-		color: #03D303;
-		font-family: 'Poppins', sans-serif;
+	.messageOne, .messageTwo{
 		font-size: 20px;
-		list-style-type: none;
-		list-style: none;
-		display: none;
-		text-align: center;
-		justify-content:center;
-		align-items:center;
-		border-radius: 25px
-	}
-	.currencyList{
-		height:320px;
-		width: 125%;
-		top:310px;
-		right:20px;
-		background-color: #333333;
-		color: white;
-		font-family: 'Poppins', sans-serif;
-		font-weight: bold; 
-		columns: 2;
-		list-style: none;
-		position: relative;
-	}
-}
-@media screen and (max-width: 576px) {
-	.coinKing{
-		height: 300px;
-		width: 100%;
-		left: 0px;
-		background-image: url("https://media.coindesk.com/uploads/2017/07/Screen-Shot-2017-07-06-at-4.49.31-PM.png");
-		background-size: cover;
-		box-sizing: border-box;
-		background-repeat: no-repeat;
-	}
-	.title{
-		height:150px;
-		width: 50%;
-		position: absolute;	
-		left:180px;
-	}
-	.applicationTitle{
-		font-family: 'Poppins', sans-serif;
-		font-size: 30px; 
-		color: white;
-		text-align: center;
-		font-weight: bold; 
-		letter-spacing: 0px;
-	}
-	.messageContainer{
-		height: 120px;
-		overflow: hidden;
-		position: relative;
-		left: 60px;
-		top: 70px;
-	}
-	.messageOne{
-		height:40px;
-		width: 100%;
-		top: 0;
-		transition: top 1s;
-		font-size: 10px; 
-		color:white;
-		text-align: center;
-		font-weight: bold; 
-		font-family: 'Poppins', sans-serif;
-		background-color: #333333;
-		position: absolute;	
-		left: 0px;	
-	}
-	.messageTwo{
-		height:30px;
-		width: 100%;
-		font-size: 10px;
-		top: 100%; 
-		transition: top 1s;
-		color:white;
-		text-align: center;
-		font-weight: bold; 
-		font-family: 'Poppins', sans-serif;
-		position: absolute;	
-		background-color: #333333;
-		left: 0px;
-	}
-	.js-search-form{
-		font-size: 0px;
-		left:10px;
-		top:75px;
-		position: relative;
-		display: inline;
-	}
-	.tickerSymbolInput{
-		border:none;
-		position: relative;
-		top:6px;
-		background-color: transparent;
-		border-bottom: solid #03D303;
-		width:150px;
-		color: #03D303;
-		height: 43px;
-		overflow: hidden;
-		border-bottom-width: 5px;
-		font-size: 40px;
-		font-family: 'Yanone Kaffeesatz', sans-serif;
-	}
-	.js-search-results{
-		height:150px;
-		width: 390px;
-		padding-right: 40px;
-		position: absolute;
-		left: 50%;
-		margin-left: -195px;
-		top:325px;
-		background-color: #333333;
-		color: #03D303;
-		font-family: 'Poppins', sans-serif;
-		font-size: 20px;
-		list-style-type: none;
-		list-style: none;
-		display: none;
-		text-align: center;
-		justify-content:center;
-		align-items:center;
-		border-radius: 25px
 	}
 }
