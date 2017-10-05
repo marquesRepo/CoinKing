@@ -10,13 +10,11 @@ function getDataFromApi(callback) {
 }
 function renderResult(result) {
   return `
-    <div>
-    	<ul style= "list-style: none;">
+    	<ul style= "list-style: none; padding: 0px;">
     		<li>${result.name}</li>
     		<li>${result.symbol}</li>
     		<li>$${result.price_usd}</li>
     	</ul>  
-    </div>
   `;
 }
 function displaySearchData(data) {
@@ -27,7 +25,7 @@ function displaySearchData(data) {
 }
 function filterCurrenciesBySymbol(symbol, data){
       let filterArray = data.filter(function(item){
-      return item.name==symbol;
+      return item.name.toLowerCase()==symbol.toLowerCase();
 });
     if(filterArray.length==0){
       return {
@@ -53,8 +51,14 @@ function animateMessages(){
   setInterval(function(){
     $(".messageContainer").toggleClass("modifier");
   },5000);
-  
 }
+ function footerClickWatch(){
+   $(".currencyList li").on("click", function(){
+    let value = $(this).text();
+    $(".tickerSymbolInput").val(value);
+   });
+ }
+footerClickWatch();
 animateMessages();
 watchSubmit();
 resultsBox();

@@ -8,7 +8,7 @@ body *{
 	height: 100%;
 	width: 100%;
 	margin: 0px;
-	background-image: url("https://media.coindesk.com/uploads/2017/07/Screen-Shot-2017-07-06-at-4.49.31-PM.png");
+	background-image: url("https://bitboii.com/static/media/carousel_bg_1.dc258645.jpg");
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -51,7 +51,7 @@ body *{
 	text-align: center;
 	font-weight: bold; 
 	font-family: 'Poppins', sans-serif;
-	background-color: #333333;
+	background-color: #091C2B;
 	position: absolute;	
 	left: 0px;	
 }
@@ -65,7 +65,7 @@ body *{
 	font-weight: bold; 
 	font-family: 'Poppins', sans-serif;
 	position: absolute;	
-	background-color: #333333;
+	background-color: #091C2B;
 	left: 0px;
 }
 .js-container{
@@ -84,9 +84,9 @@ body *{
 	position: relative;
 	top:6px;
 	background-color: transparent;
-	border-bottom: solid #03D303;
+	border-bottom: solid #FFCA00;
 	width: 250px;
-	color: #03D303;
+	color: #FFCA00;
 	height: 43px;
 	overflow: hidden;
 	border-bottom-width: 5px;
@@ -99,22 +99,26 @@ body *{
 	top: 17px;
 	text-align: center;
 	display: inline-block;
-	background-color: transparent;
-	border-color: #03D303;
-	color: #03D303;
+	background-color: #091C2B;
+	border-color: #FFCA00;
+	color: #FFCA00;
 	border-width: 5px;
 	height: 50px;
 	font-size: 50px;
 	width: 120px;
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	overflow: hidden;
+	transition: all .5s;
+}
+.searchSymbol:hover{
+	background-color: #FFCA00;
+	color: #091C2B;
 }
 .js-search-results{
-	height:180px;
+	padding: 20px;
 	width: 40%;
-	padding-right: 40px;
-	background-color: #333333;
-	color: #03D303;
+	background-color: #091C2B;
+	color: #FFCA00;
 	font-family: 'Poppins', sans-serif;
 	font-size: 20px;
 	list-style-type: none;
@@ -130,22 +134,32 @@ footer{
 	position: absolute;
 	bottom: 0px;
 	width: 100%;
+	background-color: #091C2B;
+	color: white;
+	font-family: 'Poppins', sans-serif;
+	font-weight: bold;
+	padding: 20px;
 }
 .currencyList{
-	height:120px;
-	padding: 20px;
 	width: 100%;
 	margin: 0px;
-	background-color: #333333;
+	background-color: #091C2B;
 	color: white;
 	font-family: 'Poppins', sans-serif;
 	font-weight: bold; 
 	columns: 4;
 	list-style: none;
+	padding: 0px;
+}
+.currencyList li{
+	cursor: pointer;
 }
 @media screen and (max-width: 1000px){
 	.applicationTitle{
-		font-size: 16px;
+		font-size: 40px;
+		text-align: center;
+		letter-spacing: 0px;
+
 	}
 	.js-search-form, .js-search-results{
 		float: none;
@@ -160,12 +174,36 @@ footer{
 		height: 110px;
 	}
 	.messageOne, .messageTwo{
-		font-size: 12px;
+		font-size: 16px;
+	}
+	.tickerSymbolInput{
+		display: block;
+		margin: auto;
 	}
 	.searchSymbol{
 		font-size: 25px;
 		height:35px;
 		display:block;
 		margin: auto;
+	}
+	.footerMessage{
+		text-align: center;
+	}
+}
+@media screen and (max-width:400px) {
+	.title{
+		height: 90px;
+	}
+	.messageOne, .messageTwo{
+		font-size: 13px;
+	}
+	.messageContainer{
+		width:90%;
+	}
+	.js-search-results{
+		font-size: 13px;
+	}
+	.currencyList, .footerMessage{
+		font-size: 13px;
 	}
 }
